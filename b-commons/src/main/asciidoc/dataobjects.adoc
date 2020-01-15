@@ -1,0 +1,57 @@
+= Cheatsheets
+
+[[PaginationDataContainer]]
+== PaginationDataContainer
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[empty]]`@empty`|`Boolean`|-
+|===
+
+[[PaginationDataResponse]]
+== PaginationDataResponse
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|===
+
+[[PaginationDataSection]]
+== PaginationDataSection
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[data]]`@data`|`Json object`|-
+|===
+
+[[PaginationInfoSection]]
+== PaginationInfoSection
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|===
+
+[[PaginationRequest]]
+== PaginationRequest
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[pageNumber]]`@pageNumber`|`Number (int)`|-
+|[[size]]`@size`|`Number (int)`|-
+|[[valid]]`@valid`|`Boolean`|-
+|===
+

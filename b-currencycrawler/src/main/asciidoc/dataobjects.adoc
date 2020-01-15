@@ -1,0 +1,29 @@
+= Cheatsheets
+
+[[CurrencyRate]]
+== CurrencyRate
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[buy]]`@buy`|`Number (Double)`|-
+|[[currCode]]`@currCode`|`String`|-
+|[[sell]]`@sell`|`Number (Double)`|-
+|[[time]]`@time`|`String`|-
+|===
+
+[[CurrencyRates]]
+== CurrencyRates
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[currencyRateList]]`@currencyRateList`|`Array of link:dataobjects.html#CurrencyRate[CurrencyRate]`|-
+|[[dateTime]]`@dateTime`|`String`|-
+|[[source]]`@source`|`String`|-
+|===
+

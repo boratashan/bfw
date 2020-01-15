@@ -1,0 +1,7 @@
+{
+  "clustering.enabled":true,
+  "clustering.zookeeperHosts":"localhost",
+  "clustering.rootPath": "com.b.io.vertx",
+  "clustering.retry.initialSleepTime": 3000,
+  "clustering.retry.maxTimer": 3
+}
