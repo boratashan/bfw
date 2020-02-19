@@ -15,6 +15,7 @@ public class InfinispanCacheConfigurationLoader {
             }
             JsonObject json = new JsonObject(configuration);
             return json;
+
         } catch (IOException e) {
             throw new InfinispanCacheConfigurationException("", e);
         }

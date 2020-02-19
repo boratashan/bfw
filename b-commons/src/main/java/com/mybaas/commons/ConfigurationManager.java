@@ -55,7 +55,7 @@ public class ConfigurationManager {
                 // Ignore it.
             }
         } else {
-            System.out.println("Config file not found " + config.getAbsolutePath());
+            System.out.println("Config file is not found " + config.getAbsolutePath());
         }
         System.out.println("Config retriever Success : " + conf.toString());
         return conf;
