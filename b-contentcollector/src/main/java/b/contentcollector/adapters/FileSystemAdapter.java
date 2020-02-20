@@ -67,12 +67,16 @@ public class FileSystemAdapter implements Adapter {
 
     public void read(InputStream inputStream) throws IOException {
         String fileName = getNewFileName();
-        try (FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
+        FileOutputStream fileOutputStream = new FileOutputStream(fileName);
+        try  {
             inputStream.transferTo(fileOutputStream);
             fileOutputStream.flush();
             if (Objects.nonNull(onFileStoringCompleteEvent)) {
                 this.onFileStoringCompleteEvent.accept(fileName);
             }
+        }
+        finally {
+            fileOutputStream.close();
         }
     }
 
