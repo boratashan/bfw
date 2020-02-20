@@ -19,7 +19,7 @@ include 'b-commons'
 include 'b-breadboard'
 include 'b-currencylistener'
 include 'b-currencycrawler'
-include 'b-currencyanalyzer'
+//include 'b-currencyanalyzer'
 include 'b-contentcollector'
 
 rootProject.name = 'bfw'
