@@ -13,7 +13,7 @@ public class App {
 
     public static void main(String[] args){
         try {
-            new AppRunner().setVerticleToRun(SampleVerticle.class).Dispatch(args);
+            AppRunner.initInstance().setVerticleToRun(SampleVerticle.class).Dispatch(args);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -12,38 +12,81 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
-
-    id "org.checkerframework" version "0.4.10"
 }
 
-//apply plugin: 'org.checkerframework'
 
-repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
-}
 
 dependencies {
+    compile project(':b-commons')
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.0-jre'
-// https://mvnrepository.com/artifact/commons-io/commons-io
+
+    //compile "io.vertx:vertx-codegen:3.8.1:processor"
+    compile "io.vertx:vertx-codegen:3.8.1:processor"
+    compile "io.vertx:vertx-service-proxy:3.8.1"
+
+
+    compile 'io.vertx:vertx-redis-client:3.8.3'
+    compile 'io.vertx:vertx-amqp-client:3.8.3'
+    compile 'io.vertx:vertx-unit:3.8.5'
+    compile 'io.vertx:vertx-web-client:3.8.5'
+    compile 'org.jsoup:jsoup:1.13.1'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
 
-    compile project(':b-utils')
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.3'
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.3'
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.3'
+
+
+
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation 'io.vertx:vertx-unit:3.8.5'
+}
 
+mainClassName = 'b.contentcollector.App'
+
+task annotationProcessing(type: JavaCompile, group: 'build') { // codegen
+    source = sourceSets.main.java
+    classpath = configurations.compile + configurations.compileOnly
+    destinationDir = project.file('src/main/generated')
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "io.vertx.codegen.CodeGenProcessor",
+            "-Acodegen.output=${project.projectDir}/src/main"
+    ]
+}
+
+
+
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'src/main/generated'
+        }
+        resources {
+            srcDirs += 'src/main/resources'
+        }
+    }
 
 }
 
-application {
-    // Define the main class for the application.
-    mainClassName = 'b.contentcollector.App'
+
+
+/*compileJava {
+    dependsOn annotationProcessing
 }
+*/
 
-
+/*
 checkerFramework {
     Boolean excludeTests = true
     checkers = [
@@ -51,4 +94,4 @@ checkerFramework {
             //'org.checkerframework.checker.units.UnitsChecker'
     ]
 }
-
+*/

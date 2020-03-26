@@ -23,9 +23,10 @@ dependencies {
     compile "io.vertx:vertx-service-proxy:3.8.1"
     compile 'io.vertx:vertx-redis-client:3.8.3'
     compile 'io.vertx:vertx-amqp-client:3.8.3'
-
+    compile  'io.vertx:vertx-unit:3.8.5'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation 'io.vertx:vertx-unit:3.8.5'
 
 
 

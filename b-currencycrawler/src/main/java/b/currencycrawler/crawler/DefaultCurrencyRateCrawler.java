@@ -23,7 +23,8 @@ public class DefaultCurrencyRateCrawler implements  CurrencyRateCrawler {
 
             ArrayList rates = new ArrayList();
 
-            Element body = doc.getElementById("currencies");Elements elems =   body.getElementsByAttribute("data-table-subpage-key");
+            Element body = doc.getElementById("currencies");
+            Elements elems =   body.getElementsByAttribute("data-table-subpage-key");
            for(Element e : elems) {
                 String currCode = e.attributes().get("data-table-subpage-key");
                 String time = e.getAllElements().get(9).html();

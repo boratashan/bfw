@@ -38,6 +38,7 @@ public class ConfigurationManager {
                 .setConfig(new JsonObject().put("path", "config.json"));
         ConfigRetrieverOptions options = new ConfigRetrieverOptions().addStore(fileStore);
         retriever = ConfigRetriever.create(vertx, options);
+
     }
 
     public JsonObject getConfiguration(File config) {

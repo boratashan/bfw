@@ -34,6 +34,14 @@ public class ConsoleUtils {
         ConsoleUtils.resetColour();
     }
 
+
+    public static void printLogo(String logo, AnsiColours colour) {
+        setColor(colour);
+        writeLine(logo);
+        resetColour();
+
+    }
+
     @SuppressWarnings("unused")
     public enum AnsiColours {
         RESET("\u001B[0m"),

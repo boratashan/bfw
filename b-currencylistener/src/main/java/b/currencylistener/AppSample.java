@@ -14,7 +14,7 @@ public class AppSample {
 
     public static void main(String[] args){
         try {
-            new AppRunner().setVerticleToRun(FutureSampleVerticle.class).Dispatch(args);
+            AppRunner.initInstance().setVerticleToRun(FutureSampleVerticle.class).Dispatch(args);
         } catch (Exception e) {
             e.printStackTrace();
         }

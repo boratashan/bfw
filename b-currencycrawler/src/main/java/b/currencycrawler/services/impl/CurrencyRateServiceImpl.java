@@ -1,12 +1,11 @@
 package b.currencycrawler.services.impl;
 
-import b.currencycrawler.amqpclient.AmqpClientConfigurationException;
-import b.currencycrawler.amqpclient.AmqpClientFactory;
-import b.currencycrawler.caching.infinispan.InfinispanCacheConfigurationException;
-import b.currencycrawler.caching.infinispan.InfinispanCacheFactory;
-import b.currencycrawler.data.mongodb.MongoClientConfigurationException;
-import b.currencycrawler.data.mongodb.MongoClientFactory;
-import b.currencycrawler.model.CurrencyRate;
+import com.mybaas.commons.amqpclient.AmqpClientConfigurationException;
+import com.mybaas.commons.amqpclient.AmqpClientFactory;
+import com.mybaas.commons.infinispan.InfinispanCacheConfigurationException;
+import com.mybaas.commons.infinispan.InfinispanCacheFactory;
+import com.mybaas.commons.mongodb.MongoClientConfigurationException;
+import com.mybaas.commons.mongodb.MongoClientFactory;
 import b.currencycrawler.model.CurrencyRates;
 import b.currencycrawler.services.CurrencyRatesService;
 import com.mybaas.commons.proxyclasses.PaginationRequest;
@@ -76,6 +75,7 @@ public class CurrencyRateServiceImpl  implements CurrencyRatesService {
                 .setLimit(paginationOptions.getSize())
                 .setSkip(paginationOptions.getPageNumber());
 
+
         mongoClient.findWithOptions("Rates", new JsonObject(), findOptions, res -> {
             if (res.succeeded()){
                 promise.complete(res.result());
@@ -87,6 +87,7 @@ public class CurrencyRateServiceImpl  implements CurrencyRatesService {
         promise.future().setHandler(r -> {
             resultHandler.handle(r);
         });
+        resultHandler.handle(promise.future());
         return this;
     }
 

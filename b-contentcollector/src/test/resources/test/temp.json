@@ -1,0 +1,73 @@
+{
+  "_id": {
+    "$oid": "5e70d05261cdcc56d424a5fe"
+  },
+  "project": "currencycollect",
+  "target": "uzmanpara",
+  "conf": [
+    {
+      "currcode": "USD",
+      "buy": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(2) > td:nth-child(3)",
+      "sell": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(2) > td:nth-child(4)"
+    },
+    {
+      "currcode": "EUR",
+      "buy": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(3) > td:nth-child(3)",
+      "sell": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(3) > td:nth-child(4)"
+    },
+    {
+      "currcode": "GBP",
+      "buy": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(4) > td:nth-child(3)",
+      "sell": "body > div:nth-child(9) > div.detMain.borsaMain > div.detL > div.box.box7.box11 > table > tbody > tr:nth-child(4) > td:nth-child(4)"
+    }
+  ]
+}
+
+{
+  "project": "currencycollect",
+  "target": "dovizcom",
+  "conf": [
+    {
+      "currcode": "USD",
+      "buy": "#currencies > tbody > tr:nth-child(1) > td:nth-child(2)",
+      "sell": "#currencies > tbody > tr:nth-child(1) > td:nth-child(3)"
+    },
+    {
+      "currcode": "EUR",
+      "buy": "#currencies > tbody > tr:nth-child(2) > td:nth-child(2)",
+      "sell": "#currencies > tbody > tr:nth-child(2) > td:nth-child(3)"
+    },
+    {
+      "currcode": "GBP",
+      "buy": "#currencies > tbody > tr:nth-child(3) > td:nth-child(2)",
+      "sell": "#currencies > tbody > tr:nth-child(3) > td:nth-child(3)"
+    }
+  ]
+}
+
+
+
+{
+  "project": "currencycollect",
+  "target": "bloomberght",
+  "conf": [
+    {
+      "currcode": "USD",
+      "buy": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(1) > table > tbody > tr:nth-child(1) > td:nth-child(2)",
+      "sell": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(1) > table > tbody > tr:nth-child(1) > td:nth-child(2)"
+    },
+    {
+      "currcode": "EUR",
+      "buy": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2)",
+      "sell": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2)"
+    },
+    {
+      "currcode": "GBP",
+      "buy": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(3) > table > tbody > tr:nth-child(1) > td:nth-child(2)",
+      "sell": "body > div.page-wrapper.font-base > section > div > div > div > div.box.box-8.box-100-300 > div.widget-table-data.type3.goldPriceWidget > div > div:nth-child(3) > table > tbody > tr:nth-child(2) > td:nth-child(2)"
+    }
+  ]
+}
+
+
+

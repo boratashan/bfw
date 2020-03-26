@@ -3,40 +3,25 @@
  */
 package b.contentcollector;
 
+import b.contentcollector.verticles.ContentDownloaderVerticle;
+import com.mybaas.AppRunner;
+import com.mybaas.utils.ConsoleUtils;
+import com.mybaas.utils.ResourceUtils;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
-
-        final AtomicInteger atomicInteger = new AtomicInteger(0);
-/*        FileSystemAdapter adapter = new FileSystemAdapter()
-                                        .setFileExtension(".html")
-                .setStrategy(FileSystemAdapter.FileNameSupplyingStrategy.CUSTOM)
-                .setFolder("c:/temp/")
-                .setFileNameSupplier(() -> {
-                    int i = atomicInteger.addAndGet(1);
-                    return String.format("%03d-file", i);
-                })
-                .setOnFileStoringCompleteEvent(f -> {
-                   System.out.println(String.format("%s is stored", f));
-                });
-
-        ContentDownloader downloader = new ContentDownloader()
-                .setAdapter(adapter)
-                .setTargetSupplier(new InMemoryTargetSupplier())
-                .setDownloadCompleteConsumer(s -> System.out.println(String.format("%s is downloaded", s)));
-
         try {
-            downloader.downloadContents();
-        } catch (IOException e) {
+            AppRunner.initInstance()
+                        .setVerticleToRun(ContentDownloaderVerticle.class)
+                        .Dispatch(args);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-*/
-
     }
+
+
 }

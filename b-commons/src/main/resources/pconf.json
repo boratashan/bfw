@@ -1,0 +1,5 @@
+{
+  "vertx" : {
+    "clustering.enabled": false
+  }
+}

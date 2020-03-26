@@ -1,7 +1,7 @@
 package b.contentcollector;
 
 
-import b.contentcollector.adapters.FileSystemAdapter;
+import b.abnd.adapters.FileSystemAdapter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

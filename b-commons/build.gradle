@@ -43,6 +43,7 @@ dependencies {
     api 'io.vertx:vertx-config:3.7.0'
     api 'io.vertx:vertx-circuit-breaker:3.7.0'
     api 'io.vertx:vertx-infinispan:3.8.0'
+    api 'io.vertx:vertx-mysql-client:3.8.5'
 
     compile group: 'io.vertx', name: 'vertx-zookeeper', version: '3.8.1'
 
@@ -59,7 +60,7 @@ dependencies {
     implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-    api group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    api group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
 
 
     api group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.12.1'
@@ -69,14 +70,19 @@ dependencies {
     compile "io.vertx:vertx-service-proxy:3.8.1"
 
 
+    compile 'io.vertx:vertx-redis-client:3.8.3'
+    compile 'io.vertx:vertx-amqp-client:3.8.3'
+// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-mongodb3
+//    api 'org.apache.logging.log4j:log4j-mongodb3:2.13.1'
+
+// https://mvnrepository.com/artifact/org.javatuples/javatuples
+    api group: 'org.javatuples', name: 'javatuples', version: '1.2'
+
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation 'io.vertx:vertx-unit:3.8.5'
 }
-
-
-
-
-
 
 version = '0.1.1'
 

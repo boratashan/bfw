@@ -1,0 +1,7 @@
+{
+  "port": 3306,
+  "host": "localhost",
+  "database": "content_analytic",
+  "user": "root",
+  "password": "root"
+}

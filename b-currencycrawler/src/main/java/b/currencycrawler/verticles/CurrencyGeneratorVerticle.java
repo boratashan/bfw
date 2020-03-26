@@ -2,12 +2,10 @@ package b.currencycrawler.verticles;
 
 
 import b.currencycrawler.api.CrawlerApiVerticle;
-import b.currencycrawler.caching.infinispan.InfinispanCacheFactory;
 import b.currencycrawler.crawler.CurrencyRateCrawler;
 import b.currencycrawler.crawler.CurrencyRateCrawlerException;
 import b.currencycrawler.crawler.DefaultCurrencyRateCrawler;
-import b.currencycrawler.data.mongodb.MongoClientConfigurationException;
-import b.currencycrawler.data.mongodb.MongoClientFactory;
+import com.mybaas.commons.mongodb.MongoClientFactory;
 import b.currencycrawler.model.CurrencyRate;
 import b.currencycrawler.model.CurrencyRates;
 import b.currencycrawler.services.CurrencyRatesService;
@@ -17,16 +15,11 @@ import io.vertx.core.*;
 import io.vertx.core.eventbus.MessageConsumer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.BulkOperation;
-import io.vertx.ext.mongo.FindOptions;
 import io.vertx.ext.mongo.MongoClient;
-import io.vertx.ext.mongo.MongoClientBulkWriteResult;
-import io.vertx.servicediscovery.Record;
 import io.vertx.serviceproxy.ServiceBinder;
 
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

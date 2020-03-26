@@ -1,0 +1,16 @@
+= Cheatsheets
+
+[[ContentInfo]]
+== ContentInfo
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[encodeDecodeType]]`@encodeDecodeType`|`link:enums.html#EncodeDecodeType[EncodeDecodeType]`|-
+|[[id]]`@id`|`String`|-
+|[[sourceName]]`@sourceName`|`String`|-
+|[[uri]]`@uri`|`String`|-
+|===
+

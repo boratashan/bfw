@@ -1,0 +1,23 @@
+{
+  "vertx": {
+    "clustering.enabled": false,
+    "clustering.zookeeperHosts": "localhost",
+    "clustering.rootPath": "com.b.io.vertx",
+    "clustering.retry.initialSleepTime": 3000,
+    "clustering.retry.maxTimer": 3,
+    "docdb.type": "none",
+    "docdb.config.location": "mongodb-conf.json"
+  },
+  "mysql": {
+    "port": 3306,
+    "host": "localhost",
+    "database": "content_analytic",
+    "user": "root",
+    "password": "root"
+  },
+  "mongodb": {
+    "db_name": "testWebHunterDB",
+    "useObjectId": true,
+    "connection_string": "mongodb://127.0.0.1:27017"
+  }
+}
