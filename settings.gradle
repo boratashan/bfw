@@ -16,7 +16,7 @@ include 'services:webservice'
 */
 
 include 'b-commons'
-include 'b-breadboard'
+//include 'b-breadboard'
 include 'b-currencylistener'
 include 'b-currencycrawler'
 //include 'b-currencyanalyzer'

@@ -1,9 +1,0 @@
-{
-  "clustering.enabled":false,
-  "clustering.zookeeperHosts":"localhost",
-  "clustering.rootPath": "com.b.io.vertx",
-  "clustering.retry.initialSleepTime": 3000,
-  "clustering.retry.maxTimer": 3,
-  "docdb.type":"none",
-  "docdb.config.location": "mongodb-conf.json"
-}

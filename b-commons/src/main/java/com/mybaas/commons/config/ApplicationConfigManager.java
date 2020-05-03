@@ -1,7 +1,9 @@
 package com.mybaas.commons.config;
 
 import com.mybaas.commons.exceptions.ApplicationInitializationException;
+import com.mybaas.utils.ResourceUtils;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class ApplicationConfigManager {
@@ -18,6 +20,13 @@ public class ApplicationConfigManager {
             INSTANCE.config.readPlatformConfig(platformConfig);
         }
         return INSTANCE;
+    }
+
+    public synchronized static ApplicationConfigManager initFromResources() throws IOException {
+        String platform = ResourceUtils.getResourceAsString(ApplicationConfigConstants.CONFIG_EMBEDDED_PLATFORM);
+        String options = ResourceUtils.getResourceAsString(ApplicationConfigConstants.CONFIG_EMBEDDED_OPTIONS);
+        INSTANCE = null;
+        return init(platform, options);
     }
 
     public static ApplicationConfig get() throws ApplicationInitializationException {

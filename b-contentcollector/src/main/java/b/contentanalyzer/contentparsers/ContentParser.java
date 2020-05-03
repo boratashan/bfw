@@ -1,7 +1,7 @@
 package b.contentanalyzer.contentparsers;
 
+import b.commons.model.Content;
 import b.contentanalyzer.model.CurrencyRate;
-import b.contentcollector.model.Content;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 

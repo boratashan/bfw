@@ -27,6 +27,22 @@ dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.0-jre'
     compile 'io.vertx:vertx-core:3.8.5'
+// https://mvnrepository.com/artifact/io.vertx/vertx-core
+    compile group: 'io.vertx', name: 'vertx-core', version: '3.9.0'
+// https://mvnrepository.com/artifact/io.vertx/vertx-web
+    compile group: 'io.vertx', name: 'vertx-web', version: '3.9.0'
+// https://mvnrepository.com/artifact/io.vertx/vertx-dropwizard-metrics
+   // compile group: 'io.vertx', name: 'vertx-dropwizard-metrics', version: '3.9.0'
+
+    compile 'io.vertx:vertx-micrometer-metrics:3.9.0'
+
+    compile 'io.vertx:vertx-amqp-client:3.9.0'
+
+// https://mvnrepository.com/artifact/io.micrometer/micrometer-core
+    compile group: 'io.micrometer', name: 'micrometer-core', version: '1.4.0'
+
+    compile 'io.micrometer:micrometer-registry-prometheus:latest.release'
+
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

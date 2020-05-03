@@ -1,6 +1,6 @@
 {
   "http.port": 35001,
-  "download.periodinsecs": 10,
+  "download.periodinsecs": 30,
   "download.anouncechannel": "announcement-download-done",
   "analyzer.periodinsecs": 300
 }

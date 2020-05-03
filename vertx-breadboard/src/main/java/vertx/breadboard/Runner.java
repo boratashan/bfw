@@ -1,8 +1,10 @@
 package vertx.breadboard;
 
 import io.vertx.core.DeploymentOptions;
+import io.vertx.core.Verticle;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
+import io.vertx.core.spi.VerticleFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -537,7 +539,7 @@ public class Runner {
         Runtime.getRuntime().addShutdownHook(new Thread() {
             @Override
             public void run() {
-                Vertx.vertx().close();
+                //Vertx.vertx().close();
                 //  Vertx.vertx().deploymentIDs().forEach(Vertx.vertx()::undeploy);
                 System.out.println("Exited!");
             }
@@ -561,6 +563,7 @@ public class Runner {
         }
 
         System.setProperty("vertx.cwd", exampleDir);
+
         Consumer<Vertx> runner = vertx -> {
             try {
                 if (deploymentOptions != null) {

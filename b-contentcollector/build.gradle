@@ -30,6 +30,9 @@ dependencies {
     compile 'io.vertx:vertx-amqp-client:3.8.3'
     compile 'io.vertx:vertx-unit:3.8.5'
     compile 'io.vertx:vertx-web-client:3.8.5'
+
+    compile 'io.vertx:vertx-amqp-client:3.8.3'
+
     compile 'org.jsoup:jsoup:1.13.1'
 
     // https://mvnrepository.com/artifact/commons-io/commons-io
@@ -50,7 +53,7 @@ dependencies {
     testImplementation 'io.vertx:vertx-unit:3.8.5'
 }
 
-mainClassName = 'b.contentcollector.App'
+mainClassName = 'b.abnd.contentcollector.App'
 
 task annotationProcessing(type: JavaCompile, group: 'build') { // codegen
     source = sourceSets.main.java

@@ -17,7 +17,7 @@ public class App {
 
     public static void main(String[] args) {
         try {
-            AppRunner.initInstance().setVerticleToRun(CurrencyGeneratorVerticle.class).Dispatch(args);
+            AppRunner.initInstance().setVerticlesToRun(CurrencyGeneratorVerticle.class).Dispatch(args);
         } catch (Exception e) {
             e.printStackTrace();
         }

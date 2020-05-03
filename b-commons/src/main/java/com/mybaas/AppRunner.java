@@ -7,6 +7,7 @@ import com.mybaas.commons.config.ApplicationConfigManager;
 import com.mybaas.utils.ConsoleUtils;
 import com.mybaas.utils.FileAndFolderUtils;
 import com.mybaas.utils.ResourceUtils;
+import com.sun.tools.javac.util.List;
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -22,6 +23,9 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.function.Consumer;
 
 
@@ -69,11 +73,12 @@ public class AppRunner {
 
     private Options options;
 
-    private Class verticleToRunClazz;
+
+    private Set<Class<? extends BaseVerticle>> verticlesToRunSet;
 
 
     private AppRunner() {
-
+        this.verticlesToRunSet = new LinkedHashSet<>();
     }
 
     public static AppRunner initInstance() {
@@ -82,10 +87,16 @@ public class AppRunner {
         return appRunner;
     }
 
-    public AppRunner setVerticleToRun(Class<? extends BaseVerticle> verticleClazz) {
-        this.verticleToRunClazz = verticleClazz;
+    @SafeVarargs
+    public final AppRunner setVerticlesToRun(Class<? extends BaseVerticle>... verticles) {
+        Objects.requireNonNull(verticles);
+        verticlesToRunSet.clear();
+        for (Class verticle : verticles) {
+            verticlesToRunSet.add(verticle);
+        }
         return this;
     }
+
 
     private void loadConfig(CommandLine cmdLine) throws ApplicationInitializationException {
         logger.info("Loading configuration...");
@@ -128,8 +139,8 @@ public class AppRunner {
     }
 
     public void Dispatch(String[] args) throws Exception {
-        if (this.verticleToRunClazz == null) {
-            throw new Exception("Verticle object must be specified!");
+        if (this.verticlesToRunSet.size() == 0) {
+            throw new Exception("Verticles to run must be specified!");
         }
         run(args);
     }
@@ -203,8 +214,10 @@ public class AppRunner {
 
         Consumer<Vertx> runner = vertx -> {
             try {
-                logger.info(String.format("Deploying verticle %s", verticleToRunClazz.getName()));
-                vertx.deployVerticle(verticleToRunClazz, deploymentOptions);
+                for (Class v : verticlesToRunSet) {
+                    logger.info(String.format("Deploying verticle %s", v.getName()));
+                    vertx.deployVerticle(v, deploymentOptions);
+                }
             } catch (Exception e) {
                 throw e;
             }

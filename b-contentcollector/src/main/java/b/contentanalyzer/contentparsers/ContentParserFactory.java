@@ -1,7 +1,7 @@
 package b.contentanalyzer.contentparsers;
 
-import b.contentanalyzer.model.Currency;
-import b.contentcollector.model.Content;
+
+import b.commons.model.Content;
 import io.vertx.ext.mongo.MongoClient;
 import org.apache.commons.lang3.NotImplementedException;
 

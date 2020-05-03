@@ -1,12 +1,12 @@
 package b.contentanalyzer.verticles;
 
 
+import b.commons.model.Content;
+import b.commons.model.EncodeDecodeType;
 import b.contentanalyzer.exceptions.DataRecordNotFoundException;
 import b.contentanalyzer.model.CurrencyRate;
 import b.contentanalyzer.contentparsers.ContentParser;
 import b.contentanalyzer.contentparsers.ContentParserFactory;
-import b.contentcollector.adapters.EncodeDecodeType;
-import b.contentcollector.model.Content;
 import com.mybaas.utils.DateTimeFormat;
 import com.mybaas.utils.DateTimeUtils;
 import com.mybaas.utils.StringUtils;

@@ -1,8 +1,8 @@
 package b.contentanalyzer.contentparsers;
 
+import b.commons.model.Content;
 import b.contentanalyzer.model.Currency;
 import b.contentanalyzer.model.CurrencyRate;
-import b.contentcollector.model.Content;
 import io.vertx.core.*;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jsoup.Jsoup;
